@@ -51,6 +51,7 @@
 			<input   maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Почта*"/>
 			
 			<button type="submit"  name="submit1" >Отправить</button>
+			<div class="form_container"></div>
 		</form>
 	</div>
 	<div id="overlay"></div>

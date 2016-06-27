@@ -1,6 +1,7 @@
 var d = document,
     itemBox = d.querySelectorAll('.product_list_item'), // блок каждого товара
-		cartCont = d.querySelector('.basket'); // блок вывода данных корзины
+		cartCont = d.querySelector('.basket'); 
+		form_container = d.querySelector('.form_container');// блок вывода данных корзины
 // Функция кроссбраузерная установка обработчика событий
 function addEvent(elem, type, handler){
   if(elem.addEventListener){
@@ -34,13 +35,15 @@ function addToCart(e){
 			itemPro_id = parentBox.querySelector('.id_product').value,
 			itemPro_col =  parentBox.querySelector('.item_2').value,
 			itemCount2= Number(itemCount);
-	if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
-		cartData[itemId][2] += itemCount2;
-		cartData[itemId][3] = itemVid;
-		cartData[itemId][5] = itemDes;
-	} else { // если товара в корзине еще нет, то добавляем в объект
-		cartData[itemId] = [ itemTitle, itemPrice, itemCount2, itemVid, itemImg, itemDes,itemPro_id,itemPro_col ];
-	}
+			if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
+				cartData[itemId][2] += itemCount2;
+				cartData[itemId][3] = itemVid;
+				cartData[itemId][5] = itemDes;
+				cartData[itemId][7] = itemPro_col;
+				cartData[itemId][8] + itemPro_col;
+			} else { // если товара в корзине еще нет, то добавляем в объект
+				cartData[itemId] = [ itemTitle, itemPrice, itemCount2, itemVid, itemImg, itemDes,itemPro_id,itemPro_col ];
+			}
 	var count = itemCount2;
 	var counts1 = Number($('.counts2').html());
 	if(counts1 > 0){
@@ -74,9 +77,11 @@ $('.counts2').html(localStorage.getItem("product_count"));
 
 var cartData = getCartData(), // вытаскиваем все данные корзины
 	totalItems = '';
+	formItems= '';
 	console.log(JSON.stringify(cartData));
 	// если что-то в корзине уже есть, начинаем формировать данные для вывода
 	if(cartData !== null){
+		var i = 1;
 	for(var items in cartData){
 			totalItems += '<li class="basket_list">';
 			totalItems += '<div class="product_img_first img fl_l">' + cartData[items][4] + '</div>';
@@ -86,15 +91,23 @@ var cartData = getCartData(), // вытаскиваем все данные ко
 			totalItems += '<p >' + cartData[items][5] + '</p>';
 			totalItems += '<div class="colichestvo_vid"> Количество';
 			totalItems += '<div class="col">' + cartData[items][2] + '</div>';
-			totalItems += '<input class="id_col" type="hidden" value='+ cartData[items][2] +'>' ;
+			totalItems += '<input name="colichestvo_vid'+ i +'" class="id_col" type="hidden" value='+ cartData[items][2] +'>' ;
 			totalItems += '<div class="vid_basket">' + cartData[items][3] + '</div>';
-			totalItems += '<input class="id_col" type="hidden" value='+ cartData[items][7] +'>' ;
+			totalItems += '<input name="type_col'+ i +'" class="type_col" type="hidden" value='+ cartData[items][7] +'>' ;
 			totalItems += '</div>';
 			totalItems += '</div>';
-			totalItems += '<input class="id_pord" type="hidden" value='+ cartData[items][6] +'/>' ;
+			totalItems += '<input class="id_pord" name="id_product'+ i +'" class="id_col" type="hidden" value='+ cartData[items][6] +'/>' ;
 			totalItems += '</li>';
+			formItems += '<li class="product_form">';
+			formItems += '<input name="count'+ i +'" class="id_col" type="hidden" value='+ cartData[items][2] +'>' ;
+			formItems += '<input name="type_count'+ i +'" class="type_col" type="hidden" value='+ cartData[items][7] +'>' ;
+			formItems += '<input name="id_product'+ i +'" class="id_pord" class="id_col" type="hidden" value='+ cartData[items][6] +'/>' ;
+			formItems += '</li>';
+			i++;
 		}
 		cartCont.innerHTML = totalItems;
+		form_container.innerHTML = formItems;
+		
 	}
 		
 		else {

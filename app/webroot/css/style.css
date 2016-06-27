@@ -745,6 +745,9 @@
     webkit-flex-wrap: wrap;
     webkit-justify-content: space-between;
 }
+.page {
+    background-attachment: fixed;
+}
 .nav li{
     margin-right: 0px;
 }

@@ -16,4 +16,5 @@
 			<a href="#modal1" class="open_modal button ">Отправить заявку</a>
 		</div>
 	</div>
+	
 </div>
