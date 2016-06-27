@@ -31,13 +31,15 @@ function addToCart(e){
 			itemVid = parentBox.querySelector('.item_vid').innerHTML,// вид товара
 			itemCount= parentBox.querySelector('.item_count').innerHTML,
 			itemDes = parentBox.querySelector('.product_des').innerHTML,
+			itemPro_id = parentBox.querySelector('.id_product').value,
+			itemPro_col =  parentBox.querySelector('.item_2').value,
 			itemCount2= Number(itemCount);
 	if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
 		cartData[itemId][2] += itemCount2;
 		cartData[itemId][3] = itemVid;
 		cartData[itemId][5] = itemDes;
 	} else { // если товара в корзине еще нет, то добавляем в объект
-		cartData[itemId] = [ itemTitle, itemPrice, itemCount2, itemVid, itemImg, itemDes ];
+		cartData[itemId] = [ itemTitle, itemPrice, itemCount2, itemVid, itemImg, itemDes,itemPro_id,itemPro_col ];
 	}
 	var count = itemCount2;
 	var counts1 = Number($('.counts2').html());
@@ -82,11 +84,14 @@ var cartData = getCartData(), // вытаскиваем все данные ко
 			totalItems += '<div class="product_title_second">' + cartData[items][0] + '</div>';
 			totalItems += '<div class="price">Цена	' + cartData[items][1] + '</div>';
 			totalItems += '<p >' + cartData[items][5] + '</p>';
-			totalItems += '<div class="colichestvo_vid"> Количества';
+			totalItems += '<div class="colichestvo_vid"> Количество';
 			totalItems += '<div class="col">' + cartData[items][2] + '</div>';
+			totalItems += '<input class="id_col" type="hidden" value='+ cartData[items][2] +'>' ;
 			totalItems += '<div class="vid_basket">' + cartData[items][3] + '</div>';
+			totalItems += '<input class="id_col" type="hidden" value='+ cartData[items][7] +'>' ;
 			totalItems += '</div>';
 			totalItems += '</div>';
+			totalItems += '<input class="id_pord" type="hidden" value='+ cartData[items][6] +'/>' ;
 			totalItems += '</li>';
 		}
 		cartCont.innerHTML = totalItems;

@@ -172,9 +172,13 @@ $(document).ready(function() {
 
     $('.item_vid_list_item').click(function () {
         var titleValue = $(this).html();
+        var titleInput = $(this).siblings().val();
         var thisValue = $(this).parent().siblings().children('.item_vid').html();
-        $(this).parent().siblings().children('.item_vid').html(titleValue);
+         var thisInputValue = $(this).parent().siblings().children('.item_vid').siblings().val();
+         $(this).parent().siblings().children('.item_vid').html(titleValue);
+          $(this).parent().siblings().children('.item_vid').siblings().val(titleInput);
          $(this).html(thisValue);
+          $(this).siblings().val(thisInputValue);
         // destroy
           $('.item_vid_list').css('display','none');
             

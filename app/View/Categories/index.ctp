@@ -16,8 +16,8 @@
 				<div class="product_des"><strong>Описание: </strong>
 <?= $this->Text->truncate(strip_tags($item['Product']['body']), 110, array('ellipsis' => '...', 'exact' => true)) ?>
 				 </div>
-				
-					<a href="/products/view/<?=$item['Product']['id']?>" class="button fl_l" >Подробнее</a>
+					<input type="hidden" name="category_id" class="id_product"value="<?=$item['Product']['id']?>">
+					<a href="/products/view/<?=$item['Product']['id']?>"class="button fl_l" >Подробнее</a>
 					<div class="col_vid">
 						<div class="number ">
 						    <span class="minus">-</span>
@@ -25,11 +25,15 @@
 						    <span class="plus">+</span>
 						</div>
 						<div class="vid_container">
-	                    	<div class="item_vid_count"><div class="item_vid">шт.</div></div>
+	                    	<div class="item_vid_count"><div class="item_vid">шт.
+							
+	                    	</div>
+	                    	<input type="hidden"class="item_2" value="sh"/></div>
 							<div class="item_vid_list">
 								<div class="item_vid_list_item">
 									кг.
 								</div>
+								<input type="hidden"class="item_2" value="kg"/>
 							</div>
 						</div>
 				    </div>
