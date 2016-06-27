@@ -13,8 +13,9 @@
 				<div class="price_price">
 					Цена: <div class="price"> <?=$item['price']?> тг.</div>
 				</div>
-				<p class="product_des"><strong>Описание: </strong><?=$item['body']?> </p>
-				
+				<div class="product_des">
+		<strong>Описание: </strong><?=$item['body']?>
+				</div>
 					<a href="/products/view/<?=$item['id']?>" class="button fl_l" >Подробнее</a>
 					<div class="col_vid">
 						<div class="number ">

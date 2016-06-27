@@ -173,7 +173,7 @@
     text-indent: 10px;
 }
 .search button {
-    height: 32px;
+    height: 34px;
     background-color: #fff;
     width: 52px;
     border: none;
@@ -714,4 +714,11 @@
 }
 .priduct {
     overflow: hidden;
+}
+.more:hover {
+    text-decoration: underline;
+}
+/**/
+@media screen and (max-width: 960px){
+
 }

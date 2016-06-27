@@ -9,7 +9,6 @@
 			<div class="price_price">
 				Цена: <div class="price"> <?=$data['Product']['price']?> </div>
 			</div>
-			<div class="priduct">
 			<div class="product_des">
 				<strong>Описание: </strong>
 				<?=$data['Product']['body']?>
@@ -29,9 +28,9 @@
 						</div>
 					</div>
 				</div>
-		    </div>
+				</div>
 			<button  class="button add_item fl_r" data-id="<?=$data['Product']['id']?>">В корзину</button>
-			</div>
-		</div>
+
+		
 	</div>
 </div>

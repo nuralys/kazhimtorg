@@ -4,12 +4,12 @@
 <ul class="news_list">
 <?php foreach($data as $item): ?>
 	<li>
-		<div class="news_item__img">
+		<div class="news_item_img">
 			<img src="/img/stock/thumbs/<?=$item['Stock']['img']?>" alt="<?=$item['Stock']['title']?>">
 		</div>
-		<div class="client_name">
+		<a href=""class="news_item__link">
 			<?=$item['Stock']['title']?>
-		</div>
+		</a>
 		<a href="/stocks/view/<?=$item['Stock']['id']?>" class="more fl_r mr_top">Подробнее</a>
 	</li>
 <?php endforeach ?>
