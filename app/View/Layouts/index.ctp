@@ -45,10 +45,10 @@
 		<div class="logo"><img src="img/logo.png" alt=""></div>
 	<div class="title_z">Заказ товара</div>
 
-        <form method="POST" name="form1" action="form.php" >
-			<input    maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Фио*"/>
-			<input   maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Номер*"/>
-			<input   maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Почта*"/>
+        <form method="POST" name="form1" action="/baskets/send" >
+			<input name="fio" maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Фио*"/>
+			<input name="phone" maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Номер*"/>
+			<input name="email" maxlength="200" class="modal_f" type="email" size="1"  required placeholder="Почта*"/>
 			
 			<button type="submit"  name="submit1" >Отправить</button>
 			<div class="form_container"></div>

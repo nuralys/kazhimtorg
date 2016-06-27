@@ -77,9 +77,6 @@ class BasketsController extends AppController{
 		return $this->redirect($this->referer());
 	}
 
-	
-
-
 	public function view($id){
 		if(is_null($id) || !(int)$id || !$this->Basket->exists($id)){
 			throw new NotFoundException('Такой страницы нет...');
@@ -93,5 +90,16 @@ class BasketsController extends AppController{
 		$this->set(compact('data', 'news'));
 	}
 
-	
+	public function send(){
+		if( !empty($this->request->data) ){
+			$data = $this->request->data;
+			for($i = 1; $i <= 10; $i++){
+				$data['Product']['id'][] = $data["id_product$i"];
+			}
+			debug($data['Product']);
+			die;
+
+			// $data['Product'][]
+		}
+	}
 }
