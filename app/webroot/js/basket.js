@@ -25,16 +25,17 @@ function addToCart(e){
 	var cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
 			parentBox = this.parentNode, // родительский элемент кнопки &quot;Добавить в корзину&quot;
 			itemId = this.getAttribute('data-id'), // ID товара
-			itemTitle = parentBox.querySelector('.product_title').innerHTML, // название товараproduct_img_first
+			itemTitle = parentBox.querySelector('.product_title').innerHTML, // название товараp
 			itemImg = parentBox.querySelector('.product_img_first').innerHTML,
 			itemPrice = parentBox.querySelector('.price').innerHTML,
 			itemVid = parentBox.querySelector('.item_vid').innerHTML,// вид товара
-			itemCount= parentBox.querySelector('.item_count').innerHTML;
+			itemCount= parentBox.querySelector('.item_count').innerHTML,
 			itemDes = parentBox.querySelector('.product_des').innerHTML,
 			itemCount2= Number(itemCount);
 	if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
 		cartData[itemId][2] += itemCount2;
 		cartData[itemId][3] = itemVid;
+		cartData[itemId][5] = itemDes;
 	} else { // если товара в корзине еще нет, то добавляем в объект
 		cartData[itemId] = [ itemTitle, itemPrice, itemCount2, itemVid, itemImg, itemDes ];
 	}
@@ -51,9 +52,9 @@ function addToCart(e){
 	// Обновляем данные в LocalStorage
 	if(!setCartData(cartData)){ 
 		this.disabled = false; // разблокируем кнопку после обновления LS
-		d.querySelector('.add_item').innerHTML = ' добавлено ';
+		this.innerHTML = ' добавлено ';
 		setTimeout(function(){
-			d.querySelector('.add_item').innerHTML = 'В корзину';
+			parentBox.querySelector('.add_item').innerHTML = 'В корзину';
 		}, 1000);
 	}
 	return false;
@@ -77,14 +78,15 @@ var cartData = getCartData(), // вытаскиваем все данные ко
 	for(var items in cartData){
 			totalItems += '<li class="basket_list">';
 			totalItems += '<div class="product_img_first img fl_l">' + cartData[items][4] + '</div>';
+			totalItems += '<div class="priduct">';
 			totalItems += '<div class="product_title_second">' + cartData[items][0] + '</div>';
 			totalItems += '<div class="price">Цена	' + cartData[items][1] + '</div>';
-			totalItems += '<p class="des_product">' + cartData[items][5] + '</p>';
+			totalItems += '<p >' + cartData[items][5] + '</p>';
 			totalItems += '<div class="colichestvo_vid"> Количества';
 			totalItems += '<div class="col">' + cartData[items][2] + '</div>';
 			totalItems += '<div class="vid_basket">' + cartData[items][3] + '</div>';
 			totalItems += '</div>';
-			
+			totalItems += '</div>';
 			totalItems += '</li>';
 		}
 		cartCont.innerHTML = totalItems;

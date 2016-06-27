@@ -40,6 +40,20 @@
 		</div>
 	</div>
 	<?=$this->element('footer')?>	
+	<div id="modal1" class="modal_div"> <!-- скрытый див с уникальным id = modal1 -->
+	<span class="modal_close"></span>
+		<div class="logo"><img src="img/logo.png" alt=""></div>
+	<div class="title_z">Заказ товара</div>
+
+        <form method="POST" name="form1" action="form.php" >
+			<input    maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Фио*"/>
+			<input   maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Номер*"/>
+			<input   maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Почта*"/>
+			
+			<button type="submit"  name="submit1" >Отправить</button>
+		</form>
+	</div>
+	<div id="overlay"></div>
 	<div class="basket"></div>
 	<script src="/js/custom-file-input.js"></script>
 	<script src="/js/basket.js" type="text/javascript"></script>

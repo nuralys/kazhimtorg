@@ -13,9 +13,9 @@
 				<div class="price_price">
 					Цена: <div class="price"> <?=$item['Product']['price']?> тг.</div>
 				</div>
-				<p class="product_des"><strong>Описание: </strong>
+				<div class="product_des"><strong>Описание: </strong>
 <?= $this->Text->truncate(strip_tags($item['Product']['body']), 110, array('ellipsis' => '...', 'exact' => true)) ?>
-				 </p>
+				 </div>
 				
 					<a href="/products/view/<?=$item['Product']['id']?>" class="button fl_l" >Подробнее</a>
 					<div class="col_vid">

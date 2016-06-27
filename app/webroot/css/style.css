@@ -415,13 +415,17 @@
     display: inline-block;
 }
 .col_vid {
-    /* float: left; */
+    float: left;
     line-height: 34px;
     display: inline-block;
     margin-left: 7%;
 }
 .basket {
     display: none;
+}
+.product_des strong {
+    float: left;
+    margin-right: 5px;
 }
 .basket.list {
     display: block;
@@ -514,6 +518,9 @@
 .product_title:hover{
     text-decoration: none;
 }
+.product_title.display_none {
+    display: none;
+}
 .number {
     overflow: hidden;
     float: left;
@@ -552,5 +559,159 @@
     float: left;
     margin-right: 15px;
 }
-
+.product_des {
+    margin-bottom: 15px;
+}
 /*product_list end*/
+/*modal okno*/
+.modal_div {
+    width: 254px;
+    background: rgba(0, 0, 0, 0.79);
+    position: fixed;
+    /* background-color: rgb(84, 77, 65); */
+    top: 45%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+    border-radius: 7px;
+    display: none;
+    opacity: 0;
+    z-index: 11;
+    text-align: center;
+    padding: 30px 54px;
+    position: fixed;
+}
+#modal1 textarea {
+    height: 70px;
+    line-height: 16px;
+}
+.modal_close {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 8040;
+    background-color: #fff;
+    border-radius: 50%;
+    background-image: url(../img/close.svg);
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 0px 1px rgba(51, 51, 51, 0.17);
+    background-size: 10px;
+    background-position: top 5px center;
+}
+
+#modal_form {
+    width: 300px; 
+    height: 300px; /* Р   Р  Р’В°Р  Р’В·Р  РЎВР  Р’ВµР РЋР вЂљР РЋРІР‚в„– Р  РўвЂР  РЎвЂўР  Р’В»Р  Р’В¶Р  Р вЂ¦Р РЋРІР‚в„– Р  Р’В±Р РЋРІР‚в„–Р РЋРІР‚С™Р РЋР Р‰ Р РЋРІР‚С›Р  РЎвЂР  РЎвЂќР РЋР С“Р  РЎвЂР РЋР вЂљР  РЎвЂўР  Р вЂ Р  Р’В°Р  Р вЂ¦Р РЋРІР‚в„– */
+    border-radius: 5px;
+    border: 3px #000 solid;
+    background: #fff;
+    position: fixed; /* Р РЋРІР‚РЋР РЋРІР‚С™Р  РЎвЂўР  Р’В±Р РЋРІР‚в„– Р  РЎвЂўР  РЎвЂќР  Р вЂ¦Р  РЎвЂў Р  Р’В±Р РЋРІР‚в„–Р  Р’В»Р  РЎвЂў Р  Р вЂ  Р  Р вЂ Р  РЎвЂР  РўвЂР  РЎвЂР  РЎВР  РЎвЂўР  РІвЂћвЂ“ Р  Р’В·Р  РЎвЂўР  Р вЂ¦Р  Р’Вµ Р  Р вЂ  Р  Р’В»Р РЋР вЂ№Р  Р’В±Р  РЎвЂўР  РЎВ Р  РЎВР  Р’ВµР РЋР С“Р РЋРІР‚С™Р  Р’Вµ */
+    top: 45%; /* Р  РЎвЂўР РЋРІР‚С™Р РЋР С“Р РЋРІР‚С™Р РЋРЎвЂњР  РЎвЂ”Р  Р’В°Р  Р’ВµР  РЎВ Р РЋР С“Р  Р вЂ Р  Р’ВµР РЋР вЂљР РЋРІР‚В¦Р РЋРЎвЂњ 45%, Р  РЎвЂўР РЋР С“Р РЋРІР‚С™Р  Р’В°Р  Р’В»Р РЋР Р‰Р  Р вЂ¦Р РЋРІР‚в„–Р  Р’Вµ 5% Р  РЎвЂ”Р  РЎвЂўР  РўвЂР  Р вЂ Р  РЎвЂР  Р вЂ¦Р  Р’ВµР РЋРІР‚С™ Р РЋР С“Р  РЎвЂќР РЋР вЂљР  РЎвЂР  РЎвЂ”Р РЋРІР‚С™ */
+    left: 50%; /* Р  РЎвЂ”Р  РЎвЂўР  Р’В»Р  РЎвЂўР  Р вЂ Р  РЎвЂР  Р вЂ¦Р  Р’В° Р РЋР РЉР  РЎвЂќР РЋР вЂљР  Р’В°Р  Р вЂ¦Р  Р’В° Р РЋР С“Р  Р’В»Р  Р’ВµР  Р вЂ Р  Р’В° */
+    margin-top: -150px;
+    margin-left: -150px; /* Р РЋРІР‚С™Р РЋРЎвЂњР РЋРІР‚С™ Р  Р вЂ Р РЋР С“Р РЋР РЏ Р  РЎВР  Р’В°Р  РЎвЂ“Р  РЎвЂР РЋР РЏ Р РЋРІР‚ Р  Р’ВµР  Р вЂ¦Р РЋРІР‚С™Р РЋР вЂљР  РЎвЂўР  Р вЂ Р  РЎвЂќР  РЎвЂ css, Р  РЎвЂўР РЋРІР‚С™Р РЋР С“Р РЋРІР‚С™Р РЋРЎвЂњР  РЎвЂ”Р  Р’В°Р  Р’ВµР  РЎВ Р  Р вЂ Р  Р’В»Р  Р’ВµР  Р вЂ Р  РЎвЂў Р  РЎвЂ Р  Р вЂ Р  Р вЂ Р  Р’ВµР РЋР вЂљР РЋРІР‚В¦ Р  РЎВР  РЎвЂР  Р вЂ¦Р РЋРЎвЂњР РЋР С“ Р  РЎвЂ”Р  РЎвЂўР  Р’В»Р  РЎвЂўР  Р вЂ Р  РЎвЂР  Р вЂ¦Р РЋРЎвЂњ Р РЋРІвЂљВ¬Р  РЎвЂР РЋР вЂљР  РЎвЂР  Р вЂ¦Р РЋРІР‚в„– Р  РЎвЂ Р  Р вЂ Р РЋРІР‚в„–Р РЋР С“Р  РЎвЂўР РЋРІР‚С™Р РЋРІР‚в„– Р РЋР С“Р  РЎвЂўР  РЎвЂўР РЋРІР‚С™Р  Р вЂ Р  Р’ВµР РЋРІР‚С™Р РЋР С“Р РЋРІР‚С™Р  Р вЂ Р  Р’ВµР  Р вЂ¦Р  Р вЂ¦Р  РЎвЂў =) */
+    display: none; /* Р  Р вЂ  Р  РЎвЂўР  Р’В±Р РЋРІР‚в„–Р РЋРІР‚РЋР  Р вЂ¦Р  РЎвЂўР  РЎВ Р РЋР С“Р  РЎвЂўР РЋР С“Р РЋРІР‚С™Р  РЎвЂўР РЋР РЏР  Р вЂ¦Р  РЎвЂР  РЎвЂ Р  РЎвЂўР  РЎвЂќР  Р вЂ¦Р  Р’В° Р  Р вЂ¦Р  Р’Вµ Р  РўвЂР  РЎвЂўР  Р’В»Р  Р’В¶Р  Р вЂ¦Р  РЎвЂў Р  Р’В±Р РЋРІР‚в„–Р РЋРІР‚С™Р РЋР Р‰ */
+    opacity: 0; /* Р  РЎвЂ”Р  РЎвЂўР  Р’В»Р  Р вЂ¦Р  РЎвЂўР РЋР С“Р РЋРІР‚С™Р РЋР Р‰Р РЋР вЂ№ Р  РЎвЂ”Р РЋР вЂљР  РЎвЂўР  Р’В·Р РЋР вЂљР  Р’В°Р РЋРІР‚РЋР  Р вЂ¦Р  РЎвЂў Р  РўвЂР  Р’В»Р РЋР РЏ Р  Р’В°Р  Р вЂ¦Р  РЎвЂР  РЎВР  РЎвЂР РЋР вЂљР  РЎвЂўР  Р вЂ Р  Р’В°Р  Р вЂ¦Р  РЎвЂР РЋР РЏ */
+    z-index: 5; /* Р  РЎвЂўР  РЎвЂќР  Р вЂ¦Р  РЎвЂў Р  РўвЂР  РЎвЂўР  Р’В»Р  Р’В¶Р  Р вЂ¦Р  РЎвЂў Р  Р’В±Р РЋРІР‚в„–Р РЋРІР‚С™Р РЋР Р‰ Р  Р вЂ¦Р  Р’В°Р  РЎвЂР  Р’В±Р  РЎвЂўР  Р’В»Р  Р’ВµР  Р’Вµ Р  Р’В±Р  РЎвЂўР  Р’В»Р РЋР Р‰Р РЋРІвЂљВ¬Р  Р’ВµР  РЎВ Р РЋР С“Р  Р’В»Р  РЎвЂўР  Р’Вµ */
+    padding: 20px 10px;
+}
+/* Р  РЎв„ўР  Р вЂ¦Р  РЎвЂўР  РЎвЂ”Р  РЎвЂќР  Р’В° Р  Р’В·Р  Р’В°Р  РЎвЂќР РЋР вЂљР РЋРІР‚в„–Р РЋРІР‚С™Р РЋР Р‰ Р  РўвЂР  Р’В»Р РЋР РЏ Р РЋРІР‚С™Р  Р’ВµР РЋРІР‚В¦ Р  РЎвЂќР РЋРІР‚С™Р  РЎвЂў Р  Р вЂ  Р РЋРІР‚С™Р  Р’В°Р  Р вЂ¦Р  РЎвЂќР  Р’Вµ) */
+#modal_form #modal_close {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    display: block;
+}
+/* Р  РЎСџР  РЎвЂўР  РўвЂР  Р’В»Р  РЎвЂўР  Р’В¶Р  РЎвЂќР  Р’В° */
+#overlay {
+  z-index: 9; /* Р  РЎвЂ”Р  РЎвЂўР  РўвЂР  Р’В»Р  РЎвЂўР  Р’В¶Р  РЎвЂќР  Р’В° Р  РўвЂР  РЎвЂўР  Р’В»Р  Р’В¶Р  Р вЂ¦Р  Р’В° Р  Р’В±Р РЋРІР‚в„–Р РЋРІР‚С™Р РЋР Р‰ Р  Р вЂ Р РЋРІР‚в„–Р РЋРІвЂљВ¬Р  Р’Вµ Р РЋР С“Р  Р’В»Р  РЎвЂўР  Р’ВµР  Р вЂ  Р РЋР РЉР  Р’В»Р  Р’ВµР  РЎВР  Р’ВµР  Р вЂ¦Р РЋРІР‚С™Р  РЎвЂўР  Р вЂ  Р РЋР С“Р  Р’В°Р  РІвЂћвЂ“Р РЋРІР‚С™Р  Р’В°, Р  Р вЂ¦Р  РЎвЂў Р  Р вЂ¦Р  РЎвЂР  Р’В¶Р  Р’Вµ Р РЋР С“Р  Р’В»Р  РЎвЂўР РЋР РЏ Р  РЎВР  РЎвЂўР  РўвЂР  Р’В°Р  Р’В»Р РЋР Р‰Р  Р вЂ¦Р  РЎвЂўР  РЎвЂ“Р  РЎвЂў Р  РЎвЂўР  РЎвЂќР  Р вЂ¦Р  Р’В° */
+    position: fixed; /* Р  Р вЂ Р РЋР С“Р  Р’ВµР  РЎвЂ“Р  РўвЂР  Р’В° Р  РЎвЂ”Р  Р’ВµР РЋР вЂљР  Р’ВµР  РЎвЂќР РЋР вЂљР РЋРІР‚в„–Р  Р вЂ Р  Р’В°Р  Р’ВµР РЋРІР‚С™ Р  Р вЂ Р  Р’ВµР РЋР С“Р РЋР Р‰ Р РЋР С“Р  Р’В°Р  РІвЂћвЂ“Р РЋРІР‚С™ */
+    /*background-color: #000; /* Р РЋРІР‚РЋР  Р’ВµР РЋР вЂљР  Р вЂ¦Р  Р’В°Р РЋР РЏ */
+    opacity: 0.8; /* Р  Р вЂ¦Р  РЎвЂў Р  Р вЂ¦Р  Р’ВµР  РЎВР  Р вЂ¦Р  РЎвЂўР  РЎвЂ“Р  РЎвЂў Р  РЎвЂ”Р РЋР вЂљР  РЎвЂўР  Р’В·Р РЋР вЂљР  Р’В°Р РЋРІР‚РЋР  Р вЂ¦Р  Р’В° */
+    width: 100%; 
+    height: 100%; /* Р РЋР вЂљР  Р’В°Р  Р’В·Р  РЎВР  Р’ВµР РЋР вЂљР  РЎвЂўР  РЎВ Р  Р вЂ Р  РЎвЂў Р  Р вЂ Р  Р’ВµР РЋР С“Р РЋР Р‰ Р РЋР РЉР  РЎвЂќР РЋР вЂљР  Р’В°Р  Р вЂ¦ */
+    top: 0; 
+    left: 0; /* Р РЋР С“Р  Р вЂ Р  Р’ВµР РЋР вЂљР РЋРІР‚В¦Р РЋРЎвЂњ Р  РЎвЂ Р РЋР С“Р  Р’В»Р  Р’ВµР  Р вЂ Р  Р’В° 0, Р  РЎвЂўР  Р’В±Р РЋР РЏР  Р’В·Р  Р’В°Р РЋРІР‚С™Р  Р’ВµР  Р’В»Р РЋР Р‰Р  Р вЂ¦Р РЋРІР‚в„–Р  Р’Вµ Р РЋР С“Р  Р вЂ Р  РЎвЂўР  РІвЂћвЂ“Р РЋР С“Р РЋРІР‚С™Р  Р вЂ Р  Р’В°! */
+    cursor: pointer;
+    display: none; /* Р  Р вЂ  Р  РЎвЂўР  Р’В±Р РЋРІР‚в„–Р РЋРІР‚РЋР  Р вЂ¦Р  РЎвЂўР  РЎВ Р РЋР С“Р  РЎвЂўР РЋР С“Р РЋРІР‚С™Р  РЎвЂўР РЋР РЏР  Р вЂ¦Р  РЎвЂР  РЎвЂ Р  Р’ВµР РЋРІР‚В Р  Р вЂ¦Р  Р’ВµР РЋРІР‚С™) */
+}
+.title_z {
+    overflow: hidden;
+    margin: 0 0 15px;
+    color: #fff;
+    font-size: 23px;
+    line-height: 1.2;
+    text-align: center;
+    /* text-transform: uppercase; */
+    overflow: hidden;
+    position: relative;
+    font-family: "HelveticaNeueCyr-Bold";
+    display: block;
+    /* font-family: "NeueCyr-Roman"; */
+}
+.modal_f {
+    width: 100%;
+    text-indent: 10px;
+    padding: 0px;
+    outline: medium none;
+    line-height: 34px;
+    border: none;
+    font-size: 14px;
+    display: block;
+    margin: 0px auto 10px;
+}
+.modal_f::-webkit-input-placeholder { 
+  font-family: "Helvetica-Roman";
+}
+::-webkit-input-placeholder {color:#000;}
+::-moz-placeholder          {color:#000;}/* Firefox 19+ */
+:-moz-placeholder           {color:#000;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#000;}
+.ya-share2__container.ya-share2__container_size_m {
+    float: right;
+    margin-top: 15px;
+    clear: both;
+}
+
+#modal1 button {
+    font-family: "HelveticaNeueCyr-Bold";
+    display: inline-block;
+    line-height: 34px;
+    padding: 0 21px;
+    color: #fff;
+    background: -moz-linear-gradient(top, #5ed384 0%,#53c177 50%,#40a561 51%,#3b9e5b 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5ed384 ), color-stop(50%,#53c177 ), color-stop(51%,#40a561 ), color-stop(100%,#3b9e5b ));
+    background: -webkit-linear-gradient(top, #5ed384 0%,#53c177 50%,#40a561 51%,#3b9e5b 100%);
+    background: -o-linear-gradient(top, #5ed384 0%,#53c177 50%,#40a561 51%,#3b9e5b 100%);
+    background: -ms-linear-gradient(top, #5ed384 0%,#53c177 50%,#40a561 51%,#3b9e5b 100%);
+    background: linear-gradient(to bottom, #5ed384 30%,#53c177 50%,#40a561 100%,#3b9e5b 100%);
+    box-shadow: 0px 2px 0px 0px #336600;
+    border-radius: 7px;
+    position: relative;
+    top: -2px;
+    border: none;
+    padding: 0 40px;
+    line-height: 36px;
+    margin-top: 20px;
+}
+
+#modal1 button:hover {
+       cursor: pointer;
+    position: relative;
+    top: 0;
+    box-shadow: inset 0px 1px 0px 0px #336600;
+}
+
+.modal_div .logo {
+    float: none;
+    margin-bottom: 15px;
+}
+.priduct {
+    overflow: hidden;
+}
