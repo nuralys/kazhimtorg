@@ -7,15 +7,20 @@
 			
 			
 		</ul>
-		<div class="button" id="destroy_basket">Отчистить корзину</div>
+		<div class="mobile">
+			<div class="button" id="destroy_basket">Отчистить корзину</div>
+		</div>
+		<div class="mobile">
 			<div class="colichest">
 				<span>В корзине</span>
-			<div class="counts2">
-
+				<div class="counts2">
+				</div>
 			</div>
+		</div>
+		<div class="mobile">
 			<a href="#modal1" class="open_modal button ">Отправить заявку</a>
-			<a href="#modal1" class=" button none">Отправить заявку</a>
 		</div>
 	</div>
+
 
 </div>

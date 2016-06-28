@@ -24,7 +24,7 @@ function setCartData(o){
 function addToCart(e){
 	//this.disabled = true; // блокируем кнопку на время операции с корзиной
 	var cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
-			parentBox = this.parentNode, // родительский элемент кнопки &quot;Добавить в корзину&quot;
+			parentBox = this.parentNode.parentNode.parentNode, // родительский элемент кнопки &quot;Добавить в корзину&quot;
 			itemId = this.getAttribute('data-id'), // ID товара
 			itemTitle = parentBox.querySelector('.product_title').innerHTML, // название товараp
 			itemImg = parentBox.querySelector('.product_img_first').innerHTML,
@@ -35,8 +35,7 @@ function addToCart(e){
 			itemPro_id = parentBox.querySelector('.id_product').value,
 			itemPro_col =  parentBox.querySelector('.item_2').value,
 			itemCount2= Number(itemCount);
-			allcount2= d.querySelector('.counts2').innerHTML;
-			allcount = Number(allcount2);
+		
 			if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
 				cartData[itemId][2] += itemCount2;
 				cartData[itemId][3] = itemVid;
@@ -44,7 +43,7 @@ function addToCart(e){
 				cartData[itemId][7] = itemPro_col;
 				cartData[itemId][8] + itemPro_col;
 			} else { // если товара в корзине еще нет, то добавляем в объект
-				cartData[itemId] = [ itemTitle, itemPrice, itemCount2, itemVid, itemImg, itemDes,itemPro_id, itemPro_col, allcount ];
+				cartData[itemId] = [ itemTitle, itemPrice, itemCount2, itemVid, itemImg, itemDes,itemPro_id, itemPro_col ];
 			}
 	var count = itemCount2;
 	var counts1 = Number($('.counts2').html());
@@ -59,7 +58,7 @@ function addToCart(e){
 	// Обновляем данные в LocalStorage
 	if(!setCartData(cartData)){ 
 		this.disabled = false; // разблокируем кнопку после обновления LS
-		this.innerHTML = ' добавлено ';
+		this.innerHTML = ' Добавлено ';
 		$('.product').append('<a href="/baskets" class="button">Перейти в корзину</a>');
 		setTimeout(function(){
 			parentBox.querySelector('.add_item').innerHTML = 'В корзину';

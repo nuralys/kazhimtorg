@@ -34,6 +34,22 @@
 					<li><a href="/page/faq">Вопросы и ответы </a></li>
 					<li><a href="/page/contacts">Контакты</a></li>
 			</ul>
+			<div class="top_header">
+					<div class="m_menu"></div>
+					<div class="mob_part">
+						<ul class="mob_ul">
+							<li><a href="/">Главная </a></li>
+							<li><a href="/page/about">О компании </a></li>
+							<li><a href="/stocks"> Акции </a></li>
+							<li><a href="/articles"> Статьи</a></li>
+							<li><a href="/category">  Продукия </a></li>
+							<li><a href="/page/faq">Вопросы и ответы </a></li>
+							<li><a href="/page/contacts">Контакты</a></li>
+						</ul>
+						<div class="mob_close"></div>
+					</div>
+				    
+			</div>
 		</div>
 	</div>
 </header>

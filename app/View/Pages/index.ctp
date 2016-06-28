@@ -4,4 +4,4 @@
 			<?=$page['Page']['title'] ?>
 		</h2>
 		<?=$page['Page']['body']?>
-</div>
+</div></div>

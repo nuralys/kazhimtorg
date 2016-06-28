@@ -13,7 +13,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.js"></script>
 <link href="/css/reset.css" rel="stylesheet" type="text/css">
 <link href="/css/style.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="css/slide.css">
+<link rel="stylesheet" type="text/css" href="/css/slide.css">
 <link rel="stylesheet" href="/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 <script type="text/javascript" src="/js/jquery.fancybox.pack.js?v=2.1.5"></script>
 <script src="/js/app.js" type="text/javascript"></script>
@@ -43,7 +43,7 @@
 	<?=$this->element('footer')?>	
 	<div id="modal1" class="modal_div"> <!-- скрытый див с уникальным id = modal1 -->
 	<span class="modal_close"></span>
-		<div class="logo"><img src="img/logo.png" alt=""></div>
+		<div class="logo"><img src="/img/logo.png" alt=""></div>
 	<div class="title_z">Заказ товара</div>
 
         <form method="POST" name="form1" action="form.php" >
