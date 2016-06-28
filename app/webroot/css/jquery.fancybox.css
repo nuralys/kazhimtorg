@@ -120,13 +120,12 @@
 }
 
 .fancybox-prev {
-	left: 0;
+	left: -45px;
 }
 
 .fancybox-next {
-	right: 0;
+    right: -45px;
 }
-
 .fancybox-nav span {
 	position: absolute;
 	top: 50%;

@@ -48,41 +48,49 @@
 	<h2 class="title">
 		Сертификаты
 	</h2>
-	<div class="sertificat_js">
-		<div class="sertificat_list-item">
-			<div class="news_item">
-				<div class="news_item_img">
-					<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
+		<div class="sertificats">
+			<div class="sertificat_list-item">
+				<div class="news_item">
+					<div class="news_item_img">
+						<a href="/img/sertificat.jpg" class="fancybox"  rel="gallery"><img src="/img/sertificat.jpg" alt="" ></a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="sertificat_list-item">
-			<div class="news_item">
-				<div class="news_item_img">
-					<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
+			<div class="sertificat_list-item">
+				<div class="news_item">
+					<div class="news_item_img">
+						<a href="/img/sertificat.jpg" class="fancybox"  rel="gallery"><img src="/img/sertificat.jpg" alt="" ></a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="sertificat_list-item">
-			<div class="news_item">
-				<div class="news_item_img">
-					<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
+			<div class="sertificat_list-item">
+				<div class="news_item">
+					<div class="news_item_img">
+						<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="sertificat_list-item">
-			<div class="news_item">
-				<div class="news_item_img">
-					<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
+			<div class="sertificat_list-item">
+				<div class="news_item">
+					<div class="news_item_img">
+						<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="sertificat_list-item">
-			<div class="news_item">
-				<div class="news_item_img">
-					<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
+			<div class="sertificat_list-item">
+				<div class="news_item">
+					<div class="news_item_img">
+						<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
+					</div>
 				</div>
 			</div>
-		</div>
+			<div class="sertificat_list-item">
+				<div class="news_item">
+					<div class="news_item_img">
+						<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
+					</div>
+				</div>
+			</div>
+		
 	</div>
 </div>
