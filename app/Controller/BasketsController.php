@@ -2,6 +2,19 @@
 
 class BasketsController extends AppController{
 
+	public $uses = array('Basket', 'Product', 'Category');
+	public function beforeFilter() {
+		parent::beforeFilter();
+	}
+
+	public function admin_index(){
+		$data = $this->Basket->find('all', array(
+			'order' => array('Basket.id' => 'DESC')
+		));
+		$categories = $this->Category->find('list');
+		$title_for_layout = "Заказы";
+		$this->set(compact('data', 'title_for_layout', 'categories'));
+	}
 	public function index(){
 		
 		$title_for_layout = 'Корзина';
@@ -9,14 +22,6 @@ class BasketsController extends AppController{
 		$data = $this->Basket->find('all');
 		// debug($news);
 		$this->set(compact('data', 'title_for_layout'));
-	}
-
-	public function admin_index(){
-		$data = $this->Basket->find('all', array(
-			'order' => array('date' => 'desc')
-		));
-		
-		$this->set(compact('data'));
 	}
 
 	public function admin_add(){
@@ -77,9 +82,6 @@ class BasketsController extends AppController{
 		return $this->redirect($this->referer());
 	}
 
-	
-
-
 	public function view($id){
 		if(is_null($id) || !(int)$id || !$this->Basket->exists($id)){
 			throw new NotFoundException('Такой страницы нет...');
@@ -93,5 +95,84 @@ class BasketsController extends AppController{
 		$this->set(compact('data', 'news'));
 	}
 
-	
-}
+	public function send(){
+		if( !empty($this->request->data) ){
+			$data = $this->request->data;
+			// debug($data);
+			// die;
+			$p = array();
+			for($i = 1; $i <= $data['allcount']; $i++){
+				if(isset($data["id_product$i"]) && $data["id_product$i"] != null){
+					$data['Product'][$i]['id'] = $data["id_product$i"];
+					$data['Product'][$i]['count'] = $data["count$i"];
+					$data['Product'][$i]['type'] = $data["type_count$i"];
+					$data['Product'][$i]['fio'] = $data["fio"];
+					$data['Product'][$i]['phone'] = $data["phone"];
+					$data['Product'][$i]['email'] = $data["email"];
+					$p[] = $data['Product'][$i]['id'];
+					${"count".$i} = $data["count$i"];
+					${"type_count".$i} = $data["type_count$i"];
+				}
+			}
+			
+			$a = implode(',', $p);
+			$products = $this->Product->query("SELECT * FROM products as Basket WHERE id IN ($a)");
+			$i = 1;
+			foreach($data['Product'] as $key1 => $value1){
+				$count[] = $data['Product'][$i]['count'];
+				$type[] = $data['Product'][$i]['type'];
+				$products = $this->newArr($products, $count, $type, $value1['fio'], $value1['phone'], $value1['email']);
+				$i++;
+			}
+			// debug($products);
+			// die;
+			$this->Basket->saveMany($products);
+			}
+		}
+
+		protected function newArr(array $array, $count, $type, $fio = null, $phone = null, $email = null){
+			$b = array();
+			$y = 0;
+			foreach($array as $key => $value3){
+				$id = $value3['Basket'];
+				$id = reset($id); //пришлось выбирать первый элемент из массива, так как не понял почему не присваивлся id
+				// debug($count);
+				// die;
+				$b[$y]['Basket']['product_id'] = $id;
+				$b[$y]['Basket']['title'] = $value3['Basket']['title'];
+				$b[$y]['Basket']['price'] = $value3['Basket']['price'];
+				$b[$y]['Basket']['count'] = $count[$y];
+				$b[$y]['Basket']['type'] = $type[$y];
+				$b[$y]['Basket']['category_id'] = $value3['Basket']['category_id'];
+				$b[$y]['Basket']['fio'] = $fio;
+				$b[$y]['Basket']['phone'] = $phone;
+				$b[$y]['Basket']['email'] = $email;
+				$y++;
+			}
+			return $b;
+		}
+
+		protected function renameArrayKey(array $array, $old_name, $new_name) {
+		   $output = array();
+		       
+		   if (empty($array)
+		      || (empty($old_name) || !is_scalar($old_name))
+		      || (empty($new_name) || !is_scalar($new_name))) {
+		         return array();
+		   }
+		       
+		   foreach ($array as $key => $value) {
+		       
+		      if (is_array($value)) {
+		         $output[$key] = $this->renameArrayKey($value, $old_name, $new_name);
+		         continue;
+		      }
+		               
+		      $should_rename = $key === $old_name;
+		      $new_key = ($should_rename) ? $new_name : $key;
+		      $output[$new_key] = $value;              
+		   }
+		       
+		   return $output;
+		}
+	}

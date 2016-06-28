@@ -99,13 +99,17 @@ var cartData = getCartData(), // вытаскиваем все данные ко
 			totalItems += '<input name="type_col'+ i +'" class="type_col" type="hidden" value='+ cartData[items][7] +'>' ;
 			totalItems += '</div>';
 			totalItems += '</div>';
-			totalItems += '<input class="id_pord" name="id_product'+ i +'" class="id_col" type="hidden" value='+ cartData[items][6] +'/>' ;
+			totalItems += '<input class="id_pord" name="id_product'+ i +'" class="id_col" type="hidden" value='+ cartData[items][6] +'>' ;
 			totalItems += '</li>';
 			formItems += '<li class="product_form">';
 			formItems += '<input name="count'+ i +'" class="id_col" type="hidden" value='+ cartData[items][2] +'>' ;
 			formItems += '<input name="type_count'+ i +'" class="type_col" type="hidden" value='+ cartData[items][7] +'>' ;
-			formItems += '<input name="id_product'+ i +'" class="id_pord" class="id_col" type="hidden" value='+ cartData[items][6] +'/>' ;
+
+			formItems += '<input name="id_product'+ i +'" class="id_pord" class="id_col" type="hidden" value='+ cartData[items][6] +'>' ;
+
+			formItems += '<input name="id_product'+ i +'" class="id_pord" class="id_col" type="hidden" value='+ cartData[items][6] +'>' ;
 		
+
 			formItems += '</li>';
 				
 			i++;
