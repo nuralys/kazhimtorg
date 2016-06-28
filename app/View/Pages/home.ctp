@@ -9,8 +9,8 @@
 		<div class="min_title">
 			Рады вас приветствовать на интернет ресурсе нашей компании!
 		</div>
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-		<a href="" class="button fl_r">Подробнее</a>
+		<p><?= $this->Text->truncate(strip_tags($page['Page']['body']), 275, array('ellipsis' => '...', 'exact' => true)) ?></p>
+		<a href="/page/about" class="button fl_r">Подробнее</a>
 	</div>
 	<h2 class="title">
 		Отрасли
@@ -36,7 +36,7 @@
 			<div class="news_item">
 				<div class="news_item_img">
 					<img src="/img/stock/thumbs/<?=$item['Stock']['img'] ?>" alt="<?=$item['Stock']['title'] ?>" ></div>
-				<a href="" class="news_item__link"><?=$item['Stock']['title'] ?></a>
+				<a href="/stocks/view/<?=$item['Stock']['id'] ?>" class="news_item__link"><?=$item['Stock']['title'] ?></a>
 <!-- 				<p class="news_item_descrip">
 					Lorem Ipsum is simply dummy text of the printing and...
 				</p>
