@@ -35,6 +35,8 @@ function addToCart(e){
 			itemPro_id = parentBox.querySelector('.id_product').value,
 			itemPro_col =  parentBox.querySelector('.item_2').value,
 			itemCount2= Number(itemCount);
+			allcount2= d.querySelector('.counts2').innerHTML;
+			allcount = Number(allcount2);
 			if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
 				cartData[itemId][2] += itemCount2;
 				cartData[itemId][3] = itemVid;
@@ -42,12 +44,12 @@ function addToCart(e){
 				cartData[itemId][7] = itemPro_col;
 				cartData[itemId][8] + itemPro_col;
 			} else { // если товара в корзине еще нет, то добавляем в объект
-				cartData[itemId] = [ itemTitle, itemPrice, itemCount2, itemVid, itemImg, itemDes,itemPro_id,itemPro_col ];
+				cartData[itemId] = [ itemTitle, itemPrice, itemCount2, itemVid, itemImg, itemDes,itemPro_id, itemPro_col, allcount ];
 			}
 	var count = itemCount2;
 	var counts1 = Number($('.counts2').html());
 	if(counts1 > 0){
-		var counte=counts1 + count;
+		var counte =counts1 + count;
 		$('.counts2').html(counte);
 	}else{
 	$('.counts2').html(count)
@@ -58,6 +60,7 @@ function addToCart(e){
 	if(!setCartData(cartData)){ 
 		this.disabled = false; // разблокируем кнопку после обновления LS
 		this.innerHTML = ' добавлено ';
+		$('.product').append('<a href="/baskets" class="button">Перейти в корзину</a>');
 		setTimeout(function(){
 			parentBox.querySelector('.add_item').innerHTML = 'В корзину';
 		}, 1000);
@@ -82,6 +85,7 @@ var cartData = getCartData(), // вытаскиваем все данные ко
 	// если что-то в корзине уже есть, начинаем формировать данные для вывода
 	if(cartData !== null){
 		var i = 1;
+		var counte =$('.counts2').html();
 	for(var items in cartData){
 			totalItems += '<li class="basket_list">';
 			totalItems += '<div class="product_img_first img fl_l">' + cartData[items][4] + '</div>';
@@ -101,12 +105,22 @@ var cartData = getCartData(), // вытаскиваем все данные ко
 			formItems += '<li class="product_form">';
 			formItems += '<input name="count'+ i +'" class="id_col" type="hidden" value='+ cartData[items][2] +'>' ;
 			formItems += '<input name="type_count'+ i +'" class="type_col" type="hidden" value='+ cartData[items][7] +'>' ;
+
 			formItems += '<input name="id_product'+ i +'" class="id_pord" class="id_col" type="hidden" value='+ cartData[items][6] +'>' ;
+
+			formItems += '<input name="id_product'+ i +'" class="id_pord" class="id_col" type="hidden" value='+ cartData[items][6] +'>' ;
+		
+
 			formItems += '</li>';
+				
 			i++;
+
 		}
+		$('.product').append('<a href="/baskets" class="button">Перейти в корзину</a>');
 		cartCont.innerHTML = totalItems;
+		formItems += '<input name="allcount" class="id_pord" class="id_col" type="hidden" value='+ counte +'>' ;
 		form_container.innerHTML = formItems;
+
 		
 	}
 		

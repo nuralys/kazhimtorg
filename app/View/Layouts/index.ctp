@@ -27,6 +27,8 @@
 		<?=$this->element('header')?>
 		<div class="cr">
 			<div class="container">
+				
+				<?php echo $this->fetch('content'); ?>
 				<div class="side_bar">
 					<h2 class="title">
 						Каталог
@@ -35,7 +37,6 @@
 						<?=$sidebar ?>
 					</ul>
 				</div>
-				<?php echo $this->fetch('content'); ?>
 			</div><!-- end container -->
 		</div>
 	</div>
