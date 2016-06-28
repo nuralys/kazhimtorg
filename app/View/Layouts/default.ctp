@@ -73,13 +73,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 						<a href="/admin/pages">Страницы</a>
 					</div>
 					<div class="top_menu_item ">
-						<a href="/admin/partners">Партнеры</a>
-					</div>
-					<div class="top_menu_item ">
-						<a href="/admin/clients">Клиенты</a>
-					</div>
-					<div class="top_menu_item ">
-						<a href="/admin/reviews">Отзывы</a>
+						<a href="/admin/certificates">Сертификаты</a>
 					</div>
 					<div class="top_menu_item ">
 						<a href="/users/logout">Выход</a>

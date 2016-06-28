@@ -7,7 +7,7 @@
 		<div class="news_item_img">
 			<img src="/img/stock/thumbs/<?=$item['Stock']['img']?>" alt="<?=$item['Stock']['title']?>">
 		</div>
-		<a href=""class="news_item__link">
+		<a href="/stocks/view/<?=$item['Stock']['id']?>" class="news_item__link">
 			<?=$item['Stock']['title']?>
 		</a>
 		<a href="/stocks/view/<?=$item['Stock']['id']?>" class="more fl_r mr_top">Подробнее</a>
