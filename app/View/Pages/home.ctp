@@ -49,48 +49,14 @@
 		Сертификаты
 	</h2>
 		<div class="sertificats">
+		<?php foreach($certificates as $item): ?>
 			<div class="sertificat_list-item">
 				<div class="news_item">
 					<div class="news_item_img">
-						<a href="/img/sertificat.jpg" class="fancybox"  rel="gallery"><img src="/img/sertificat.jpg" alt="" ></a>
+						<a href="/img/certificate/<?=$item['Certificate']['img']?>" class="fancybox"  rel="gallery"><img src="/img/certificate/thumbs/<?=$item['Certificate']['img']?>" alt="" ></a>
 					</div>
 				</div>
 			</div>
-			<div class="sertificat_list-item">
-				<div class="news_item">
-					<div class="news_item_img">
-						<a href="/img/sertificat.jpg" class="fancybox"  rel="gallery"><img src="/img/sertificat.jpg" alt="" ></a>
-					</div>
-				</div>
-			</div>
-			<div class="sertificat_list-item">
-				<div class="news_item">
-					<div class="news_item_img">
-						<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
-					</div>
-				</div>
-			</div>
-			<div class="sertificat_list-item">
-				<div class="news_item">
-					<div class="news_item_img">
-						<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
-					</div>
-				</div>
-			</div>
-			<div class="sertificat_list-item">
-				<div class="news_item">
-					<div class="news_item_img">
-						<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
-					</div>
-				</div>
-			</div>
-			<div class="sertificat_list-item">
-				<div class="news_item">
-					<div class="news_item_img">
-						<a href="/img/sertificat.jpg" class="fancybox"><img src="/img/sertificat.jpg" alt="" ></a>
-					</div>
-				</div>
-			</div>
-		
-	</div>
+		<?php endforeach ?>
+		</div>
 </div>

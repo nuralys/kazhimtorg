@@ -3,18 +3,19 @@ App::uses('CakeEmail', 'Network/Email');
 
 class PagesController extends AppController {
 
-	public $uses = array('Page', 'Stock', 'Category');
+	public $uses = array('Page', 'Stock', 'Category', 'Certificate');
 
 	public function home(){
 		$page = $this->Page->findById(1);
 		$stocks = $this->Stock->find('all', array(
 			'limit' => 12
 		));
+		$certificates = $this->Certificate->find('all');
 		$categories = $this->Category->find('all');
 		$title_for_layout = 'ПОСТАВКА ХИМИЧЕСКОЙ ПРОДУКЦИИ В РЕСПУБЛИКЕ КАЗАХСТАН';
 		$meta['keywords'] = 'keywords';
 		$meta['description'] = 'description';
-		$this->set(compact('title_for_layout', 'page', 'stocks', 'categories'));
+		$this->set(compact('title_for_layout', 'page', 'stocks', 'categories', 'certificates'));
 	}
 
 	public function admin_index(){

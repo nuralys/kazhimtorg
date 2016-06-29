@@ -14,8 +14,9 @@ class CertificatesController extends AppController{
 		if($this->request->is('post')){
 			$this->Certificate->create();
 			$data = $this->request->data['Certificate'];
-			// debug($data);
-			 if(empty($data1['img']['name']) || !$data['img']['name']){
+			 // debug($data);
+			 // die;
+			 if(!$data['img']['name']){
 			 	unset($data['img']);
 			}
 			if($this->Certificate->save($data)){
